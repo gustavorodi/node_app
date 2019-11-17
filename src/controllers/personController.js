@@ -8,8 +8,6 @@ exports.get = (req, res, next) => {
 
 exports.post = (req, res, next) => {
     //console.log(req.param('nome')+"    "+req.param('email') );
-    var email = req.param('email');
-    var nome = req.param('nome');
-    exports.createUser(nome, email);
+    exports.createUser = (req.params.nome);
     res.status(201).send('Requisição recebida com post deu sucesso!');
 };

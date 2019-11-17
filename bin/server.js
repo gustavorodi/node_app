@@ -1,7 +1,13 @@
 const app = require('../src/app');
 const mongoose = require('mongoose');
 const port = normalizaPort(process.env.PORT || '3000');
-const connection = mongoose.connect("mongodb+srv://Dallas:Da11a2975778@cluster0-qpxau.mongodb.net/test?retryWrites=true&w=majority");
+const connection = mongoose.connect('mongodb+srv://Dallas:<------senha------>@cluster0-qpxau.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+    });
+
+const userSchema = require('./createUser')
+const User = mongoose.model('user', userSchema, 'user')
 
 function normalizaPort(val) {
     const port = parseInt(val, 10);
@@ -16,7 +22,7 @@ function normalizaPort(val) {
     return false;
 }
 
-async function createUser(username) {
+function createUser(username) {
     return new User({
       username,
       created: Date.now()
@@ -27,4 +33,4 @@ app.listen(port, function () {
     console.log(`app listening on port ${port}`)
 })
 
-exports.createUser();
+module.exports = createUser;

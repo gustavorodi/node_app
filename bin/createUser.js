@@ -5,10 +5,10 @@ const createUser = new mongoose.Schema({
     type: String,
     required: [true, 'nome is required']
   },
-  emial: {
-    type: String,
-    required: [true, 'nome is required']
+  created: {
+    type: Date,
+    required: [true, 'Created date is required']
   }
 })
 
-module.exports = createUser
+module.exports = createUser;
