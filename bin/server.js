@@ -1,7 +1,7 @@
 const app = require('../src/app');
 const mongoose = require('mongoose');
 const port = normalizaPort(process.env.PORT || '3000');
-mongoose.connect('mongodb+srv://Dallas:-------senha--------@cluster0-qpxau.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Dallas:<Catolicasc123>@cluster0-qpxau.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
     });
